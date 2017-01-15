@@ -1,6 +1,7 @@
 package org.techstuff;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -19,13 +20,13 @@ public class MakingAnagrams {
             secondStr.add(second.charAt(pos));
         }
 
+        Collections.sort(secondStr);
+
         int pairsFound = 0;
         for(int index = 0; index < first.length(); index++) {
-            char item = first.charAt(index);
-            if(secondStr.contains(item)) {
+            Character item = first.charAt(index);
+            if(secondStr.remove(item)) {
                 pairsFound++;
-                secondStr.remove(item);
-                break;
             }
         }
         return (first.length() - pairsFound) + (second.length() - pairsFound);
