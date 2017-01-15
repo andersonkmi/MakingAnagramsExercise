@@ -41,4 +41,14 @@ public class MakingAnagramsTest {
     public void testWithSecondArgumentEmpty() {
         assertThat(service.numberNeeded("foo", ""), is(3));
     }
+
+    @Test
+    public void testMakeAnagramsOK() {
+        assertThat(service.numberNeeded("starwars", "warhead"), is(7));
+    }
+
+    @Test
+    public void testMakeAnagramsDiffOK() {
+        assertThat(service.numberNeeded("inatel", "odor"), is(10));
+    }
 }
