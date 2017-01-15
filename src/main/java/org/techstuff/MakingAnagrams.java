@@ -13,6 +13,8 @@ public class MakingAnagrams {
             return second.length();
         } else if(first != null && second == null) {
             return first.length();
+        } else if(first == null && second == null) {
+            return 0;
         }
 
         List<Character> secondStr = new ArrayList<Character>();
